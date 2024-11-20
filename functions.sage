@@ -128,6 +128,6 @@ def normalizedtracea1(p,bound):
 			qlist.append(normtrace1)
 		else: 
 			qlist.append(0)
-		tracelist.append(qlist)
+			tracelist.append(qlist)
 
 	return tracelist
