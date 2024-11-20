@@ -86,7 +86,7 @@ def multinomial(*args):
     total = factorials[sum(args)] #first acts as the numerator for the factorial quotient
 
     for arg in args:
-        total //= factorials[arg] # //= denotes the (floor) division assignment (i.e. total = total / factorials[arg])
+        total //= factorials[arg] 
 
     return total
 
