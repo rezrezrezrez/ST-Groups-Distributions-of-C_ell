@@ -1,5 +1,3 @@
-# All functions used in the paper are here
-
 from sympy import Matrix, symbols, BlockDiagMatrix, I
 import numpy as np
 from sympy.utilities.iterables import multiset_combinations
