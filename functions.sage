@@ -70,13 +70,6 @@ def charPoly_CoeffEig(matrix, n, term):
 
     return total * ((-1) ** (k))
 
-M=[]
-for n in [0..12]:
-	if n%2==0:
-		M.append(binomial(n,n/2))
-	else:
-		M.append(0)
-
 
 def multinomial(*args):
     factorials = [factorial(i) for i in range(n+1)]
