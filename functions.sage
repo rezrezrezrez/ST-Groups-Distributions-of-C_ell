@@ -18,7 +18,6 @@ def ID(p):
     P = PolynomialRing(F,genus/2,'u')
 
     blocks = []
-
     for i in [0..(genus/2)-1]:
         blocks.append(diagonal_matrix([P.gens()[i],(P.gens()[i])^(-1)]))
 
