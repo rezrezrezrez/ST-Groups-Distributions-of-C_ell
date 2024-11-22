@@ -3,12 +3,6 @@ import numpy as np
 from sympy.utilities.iterables import multiset_combinations
 from math import factorial
 
-F.<z> = CyclotomicField(25)
-I = identity_matrix(F,2)
-O = zero_matrix(F,2)
-J = matrix(F,[[0,-1],[1,0]])
-Z = matrix(F,[[z,0],[0,z^(-1)]])
-
 
 def ID(p):
     deg = p+1
