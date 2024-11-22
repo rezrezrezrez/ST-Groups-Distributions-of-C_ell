@@ -1,4 +1,4 @@
-from sympy import Matrix, symbols, BlockDiagMatrix, I
+from sympy import Matrix, symbols, BlockDiagMatrix
 import numpy as np
 from sympy.utilities.iterables import multiset_combinations
 from math import factorial
@@ -12,9 +12,11 @@ Z = matrix(F,[[z,0],[0,z^(-1)]])
 
 def ID(p):
     deg = p+1
+
     F.<z> = CyclotomicField(p^2)
     genus = euler_phi(p^2)
     P = PolynomialRing(F,genus/2,'u')
+
     blocks = []
 
     for i in [0..(genus/2)-1]:
@@ -32,11 +34,11 @@ def IDsympy(p):
 
     blocks = []
     for i in range(genus // 2):
-        gen = u[i]
+        zeta = u[i]
         block = Matrix(
             [
-                [gen, 0],
-                [0, 1/gen]
+                [zeta, 0],
+                [0, 1/zeta]
             ]
         )
         blocks.append(block)
@@ -83,10 +85,10 @@ def combinations_sum(n, num_elements):
 def nth_moment(n):
     Mn = 0;
 
-    for combination in combinations_sum(n, 21): #be sure to change the number (not "n") to match scenario
-        a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u = combination # "unpack" the combination variables (which are 21-tuples)
+    for combination in combinations_sum(n, ...): #be sure to change the number (not "n") to match the scenario
+        ... = combination # "unpack" the combination variables (which are ...-tuples)
 
-        uProd = np.prod() # the full moment of coeff. expression MUST go inside the parenthesis of np.prod()
+        uProd = np.prod(...) # the full nth moment of coefficient expression MUST go inside the parenthesis of np.prod()
 
         Mn += multinomial(*combination) * uProd
 
