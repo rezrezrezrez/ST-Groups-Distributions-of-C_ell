@@ -60,17 +60,6 @@ def charPoly_CoeffEig_diag(matrix, n, term):
     return total * ((-1) ** (k))
 
 
-def charPoly_CoeffEig(matrix, n, term):
-    k = n - term
-
-    eigenvalues = list(matrix.eigenvals().keys()) # compute eigenvalues once and reuse them when referenced
-    combs = multiset_combinations(eigenvalues, k)
-
-    total = sum(np.prod(comb) for comb in combs)
-
-    return total * ((-1) ** (k))
-
-
 def multinomial(*args):
     factorials = [factorial(i) for i in range(n+1)]
 
