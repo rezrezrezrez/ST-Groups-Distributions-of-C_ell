@@ -3,8 +3,7 @@ import numpy as np
 import sympy as sp
 from sympy.utilities.iterables import multiset_combinations
 from math import factorial
-from sage.all import *
-from sage.all import binomial as sg_binomial
+from sage.all import *, binomial as sg_binomial
 
 
 def ID(p):
