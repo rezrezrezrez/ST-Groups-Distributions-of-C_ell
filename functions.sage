@@ -1,5 +1,6 @@
 from sympy import Matrix, symbols, BlockDiagMatrix
 import numpy as np
+import sympy as sp
 from sympy.utilities.iterables import multiset_combinations
 from math import factorial
 from sage.all import *
