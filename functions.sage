@@ -2,6 +2,8 @@ from sympy import Matrix, symbols, BlockDiagMatrix
 import numpy as np
 from sympy.utilities.iterables import multiset_combinations
 from math import factorial
+from sage.all import *
+from sage.all import binomial as sg_binomial
 
 
 def ID(p):
@@ -21,14 +23,13 @@ def ID(p):
 def IDsympy(p):
     genus = euler_phi(p**2)
 
-    u = symbols(
-        f"u1:{genus//2 + 1}"
-    )  # creates a list containing [u1, u2, u3, ...], adjust range if you want to start the ordering differently
+    u = symbols(f"u1:{genus//2 + 1}")  
+# creates a list containing [u1, u2, u3, ...], adjust range if you want to start the ordering differently
 
     blocks = []
     for i in range(genus // 2):
         zeta = u[i]
-        block = Matrix(
+        block = sp.Matrix(
             [
                 [zeta, 0],
                 [0, 1/zeta]
@@ -56,9 +57,9 @@ def charPoly_CoeffEig_diag(matrix, n, term):
 
 
 def multinomial(*args):
-    factorials = [factorial(i) for i in range(n+1)]
+    factorials = [math.factorial(i) for i in range(n+1)]
 
-    total = factorials[sum(args)] #first acts as the numerator for the factorial quotient
+    total = factorials[sum(args)] 
 
     for arg in args:
         total //= factorials[arg] 
@@ -78,10 +79,13 @@ def combinations_sum(n, num_elements):
 def nth_moment(n):
     Mn = 0;
 
-    for combination in combinations_sum(n, ...): #be sure to change the number (not "n") to match the scenario
-        ... = combination # "unpack" the combination variables (which are ...-tuples)
+    for combination in combinations_sum(n, ...): 
+#be sure to change the number (not "n") to match the scenario
+        ... = combination 
+# "unpack" the combination variables (which are ...-tuples)
 
-        uProd = np.prod(...) # the full nth moment of coefficient expression MUST go inside the parenthesis of np.prod()
+        uProd = np.prod(...) 
+# the full nth moment of coefficient expression MUST go inside the parenthesis of np.prod()
 
         Mn += multinomial(*combination) * uProd
 
